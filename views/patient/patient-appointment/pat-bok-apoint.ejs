@@ -1,0 +1,42 @@
+<%- include('../navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('../side') %>
+        </div>
+        <div class="col-10">
+            <h4 class="mt-3 border-start border-4 px-2">Book Appointments Details</h4>
+            <div class="col-8 mx-auto">
+                <div class="row">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <form action="" method="post">
+                                <div class="mt-3">
+                                    <label for="">Description</label>
+                                    <textarea name="description" class="form-control"  cols="30" rows="10"></textarea>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="">Doctor Name and Department</label>
+                                    <select class="form-select"  name="doctor">
+                                        <option selected>Doctor And Specialization</option>
+                                        <% data.forEach(data => { %>
+                                            <option value=<%-data._id %>><%-data.doctorname %> (<%-data.specialization.departmentName %>)</option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="">Appointment Date </label>
+                                    <input type="date" name="appointmentdate" class="form-control">
+                                </div>
+                                <div class="mt-3">
+                                    <input type="submit" value="Book" class="btn btn-primary w-100">
+                                </div>
+        
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

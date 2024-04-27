@@ -1,0 +1,48 @@
+<%- include('navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('side') %>
+        </div>
+        <div class="col-10">
+            <div class="row mt-4">
+                <div class="col-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body ms-2">
+                            <h1 class="display-7"><%-no_of_doctor %></h1>
+                            <h5>Total Doctors</h5>
+                            <h6>Approve Required <%-approve_dr %></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body ms-2">
+                            <h1 class="display-7"><%-no_of_patient %></h1>
+                            <h5>Total Patients</h5>
+                            <h6>Wants to Admit <%-approve_pat %></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body ms-2">
+                            <h1 class="display-7"><%-no_of_appointment %></h1>
+                            <h5>Total Appointments</h5>
+                            <h6>Approve Appointment <%-approve_appointment %></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body ms-2">
+                            <h1 class="display-7"><%-no_of_pharma %></h1>
+                            <h5>Total Pharmacists</h5>
+                            <h6>Approvement Required <%-approve_pharma %></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

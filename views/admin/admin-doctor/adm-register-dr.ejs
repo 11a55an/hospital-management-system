@@ -1,0 +1,59 @@
+<%- include('../navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:92vh;">
+            <%- include('../side') %>
+        </div>
+        <div class="col-10">
+            <h4 class="mt-3 border-start border-4 px-2">Add New Doctor To Hospital</h4>
+            <div class="row">
+                <div class="col-9 mx-auto">
+                    <div class="card px-5">
+                        <form action="" method="post" enctype="multipart/form-data">
+                           <div class="row">
+                            <div class="mt-3 col">
+                                <label for="">Name</label>
+                                <input type="text" name="doctorname" class="form-control"  placeholder="Enter your Name">
+                            </div>
+                            <div class="mt-3 col">
+                                <label for="">Email</label>
+                                <input type="email" name="email" class="form-control"  placeholder="Enter your registered email">
+                            </div>
+                           </div>
+                               <div class="row">
+                                <div class="mt-3 col">
+                                    <label for="">Address</label>
+                                    <input type="text" name="address" class="form-control" placeholder="Enter Address">
+                                </div>
+                                <div class="mt-3 col">
+                                    <label for="">Contact</label>
+                                    <input type="number" name="contact" class="form-control" placeholder="Enter contact">
+                                </div>
+                               </div>
+                                <div class="mt-3">
+                                    <label for="">Image</label>
+                                    <input type="file" name="image" class="form-control" placeholder="Enter Password">
+                                </div>
+                                <div class="mt-3">
+                                    <select class="form-select"  name="specialization">
+                                        <option selected> Specialization</option>
+                                        <% data.forEach(data => { %>
+                                            <option value=<%-data.%>><%- data.departmentName %></option>
+                                           <% }) %>
+                                      </select>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="">Password</label>
+                                    <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                                </div>
+                                <div class="mt-3">
+                                        <input type="submit" class="btn btn-primary w-100" value="Apply Now">
+                                </div>
+                        </form>
+                       </div>
+                </div>
+            </div>
+       
+        </div>
+    </div>
+</div>

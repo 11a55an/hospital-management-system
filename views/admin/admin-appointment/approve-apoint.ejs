@@ -1,0 +1,39 @@
+<%- include('../navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('../side') %>
+        </div>
+        <div class="col-10">
+            <h4 class="mt-3 border-start border-4 px-2">Appointments Approvals Required</h4>
+            <table class="table mt-4">
+                <thead class="table-dark">
+                  <tr>
+                      <th>Doctor Name</th>
+                      <th>Patient Name</th>
+                      <th>Description</th>
+                      <th>Date</th>
+                      <th>Approve</th>
+                      <th>Reject</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(data => { %>
+                        <tr>
+                            <td><%-data.doctorId.doctorname %></td>
+                            <td><%-data.patientId.patientname %></td>
+                            <td><%-data.description %></td>
+                            <td><%-data.appointmentDate %></td>
+                            <td>
+                              <a href= "/admin/approve-appointment/<%= data._id%> " class="btn btn-sm btn-success"><i class="bi bi-check2-square"></i></a>
+                            </td>
+                            <td>
+                              <a href="/admin/delete-appointment/<%= data._id%> " class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></i></a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

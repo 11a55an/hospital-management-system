@@ -1,0 +1,38 @@
+<%- include('../navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('../side') %>
+        </div>
+        <div class="col-10">
+            <h4 class="mt-3 border-start border-4 px-2">Your Appointments</h4>
+            <table class="table mt-4">
+                <thead class="table-dark">
+                  <tr>
+                      <th>Doctor Name</th>
+                      <th>Description</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(data => { %>
+                        <tr>
+                            <td><%-data.doctorId.doctorname %></td>
+                            <td><%-data.description %></td>
+                            <td><%-data.appointmentDate %></td>
+                            <td>
+                                <% if(( data.status ) == 0){ %>
+                                    <a href="" class="btn btn-sm btn-warning text-white fw-bold disabled">Pending</a>
+                                <%} else {%>
+                                    <a href="" class="btn btn-sm btn-success  fw-bold disabled">Approved</a>
+                               <% }  %>
+                                
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

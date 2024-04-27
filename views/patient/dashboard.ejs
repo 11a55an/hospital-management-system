@@ -1,0 +1,60 @@
+<%- include('navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('side') %>
+        </div>
+        <div class="col-10">
+            <div class="row mt-4">
+                <div class="col-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body ms-4">
+                            <h1 class="display-6"><%-data.doctorId.doctorname %></h1>
+                            <h5>Doctor Name</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body ms-4">
+                            <h1 class="display-6"><%-data.symptom %></h1>
+                            <h5>Symptoms</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body ms-4">
+                            <h1 class="display-6"><%-data.doctorId.contact %></h1>
+                            <h5>Doctor Mobile</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mt-3">
+                    <div class="card bg-success text-white">
+                        <div class="card-body ms-4">
+                            <h1 class="display-6">Purnea</h1>
+                            <h5>Doctor Address</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mt-3">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body ms-4">
+                            <h1 class="display-6"><%-doctor_spec.specialization.departmentName %></h1>
+                            <h5>Doctor's Department</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mt-3">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body ms-4">
+                            <h1 class="display-6"><%-data.date %></h1>
+                            <h5>Admit Date</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

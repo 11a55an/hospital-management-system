@@ -1,0 +1,11 @@
+<div class="row justify-content-center mt-3">
+        <img src= '/<%= patient.image %>' alt="" class="rounded-circle" style="height: 95px;width: 120px;">
+        <h6 class="text-white text-center mt-2">Patient</h6>
+        <h5 class="text-white text-center mt-2"><%= patient.patientname %></h5>
+    </div>
+<div class="list-group rounded-0 mt-2">
+    <a href="/patient"  class="list-group-item  border-0 list-group-item-action  bg-transparent text-light">Dashboard</a >
+    <a href="/patient/appointment-dashboard"  class="list-group-item  border-0 list-group-item-action  bg-transparent text-light">Appointment</a >
+    <a href="/patient/prescription-dashboard"  class="list-group-item  border-0 list-group-item-action  bg-transparent text-light">Prescription</a >
+    <a href=""  class="list-group-item  border-0 list-group-item-action  bg-danger text-light">Logout</a >
+</div>

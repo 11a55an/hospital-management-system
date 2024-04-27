@@ -1,0 +1,55 @@
+<%- include('base') %>
+    <div class="container">
+        <div class="col-7 mx-auto">
+            <div class="card shadow  mt-3">
+                <div class="row text-center">
+                    <h1>Apply as a Patient</h1>
+                </div>
+                <div class="px-3">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="mt-3">
+                            <label for="">Name of Patient</label>
+                            <input type="text" name="patientname" class="form-control"  placeholder="Enter your registered email">
+                        </div>
+                        <div class="mt-3">
+                            <label for="">Email</label>
+                            <input type="email" name="email" class="form-control"  placeholder="Enter your registered email">
+                        </div>
+                            <div class="mt-3">
+                                <label for="">Address</label>
+                                <input type="text" name="address" class="form-control" placeholder="Enter Password">
+                            </div>
+                            <div class="mt-3">
+                                <label for="">Contact</label>
+                                <input type="contact" name="contact" class="form-control" placeholder="Enter Password">
+                            </div>
+                            <div class="mt-3">
+                                <label for="">Doctor Specialization</label>
+                                <select class="form-select"  name="doctor">
+                                    <option selected>Doctor And Specialization</option>
+                                    <% data.forEach(data => { %>
+                                        <option value=<%-data._id %>><%-data.doctorname %> (<%-data.specialization.departmentName %>)</option>
+                                       <% }) %>
+                                  </select>
+                            </div>
+                            <div class="mt-3">
+                                <label for="">Image</label>
+                                <input type="file" name="image" class="form-control">
+                            </div>
+                            <div class="mt-3">
+                                <label for="">Symtoms</label>
+                                <textarea name="symptom" class="form-control"></textarea>
+                            </div>
+                            <div class="mt-3">
+                                <label for="">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                            </div>
+                            <div class="mt-3">
+                                    <input type="submit" class="btn btn-primary w-100" value="Appointment">
+                            </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>

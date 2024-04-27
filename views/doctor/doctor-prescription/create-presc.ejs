@@ -1,0 +1,46 @@
+<%- include('../navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('../side') %>
+        </div>
+        <div class="col-10">
+            <h4 class="mt-3 border-start border-4 px-2">Create Prescription</h4>
+            <div class="col-8 mx-auto">
+                <div class="row">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <form action="" method="post">
+                                <div class="mt-3">
+                                    <label for="">Medications</label>
+                                    <textarea name="medications" class="form-control"  cols="30" rows="5"></textarea>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="">Instructions</label>
+                                    <textarea name="instructions" class="form-control"  cols="30" rows="5"></textarea>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="">Patient Name</label>
+                                    <select class="form-select"  name="patient">
+                                        <option selected>Patient Name</option>
+                                        <% data.forEach(data => { %>
+                                            <option value="<%- data.patientId._id %>"><%- data.patientId.patientname %></option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="">Prescription Date </label>
+                                    <input type="date" name="date" class="form-control">
+                                </div>
+                                <div class="mt-3">
+                                    <input type="submit" value="Create" class="btn btn-primary w-100">
+                                </div>
+        
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<%- include('../navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('../side') %>
+        </div>
+        <div class="col-10">
+            <h4 class="mt-3 border-start border-4 px-2">Bill Generation</h4>
+            <div class="col-8 mx-auto">
+                <div class="row">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <form action="" method="post" id="billForm">
+                                <div id="products">
+                                    <div class="mt-3">
+                                        <label for="">Patient Name</label>
+                                        <select class="form-select"  name="patient">
+                                            <option selected>Patient Name</option>
+                                            <% data.forEach(data => { %>
+                                                <option value=<%- data.patientname %>><%-data.patientname %></option>
+                                            <% }) %>
+                                        </select>
+                                    </div>
+                                    <div class="mt-3 product">
+                                        <label for="">Product Name</label>
+                                        <select class="form-select product-select" name="product">
+                                            <option selected>Product Name</option>
+                                            <% product.forEach(product => { %>
+                                                <option value="<%- product.product %>"><%- product.product %></option>
+                                            <% }) %>
+                                        </select>
+                                        <label for="">Quantity</label>
+                                        <input type="number" name="quantity" class="form-control quantity">
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <button type="button" id="addProductBtn" class="btn btn-secondary">Add Product</button>
+                                </div>
+                                <div class="mt-3">
+                                    <input type="submit" value="Generate Bill" class="btn btn-primary w-100">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addProductBtn = document.getElementById('addProductBtn');
+        const productsContainer = document.getElementById('products');
+
+        addProductBtn.addEventListener('click', function() {
+            const productTemplate = `
+                <div class="mt-3 product">
+                    <label for="">Product Name</label>
+                    <select class="form-select product-select" name="product">
+                        <option selected>Product Name</option>
+                        <% product.forEach(product => { %>
+                            <option value="<%- product.product %>"><%- product.product %></option>
+                        <% }) %>
+                    </select>
+                    <label for="">Quantity</label>
+                    <input type="number" name="quantity" class="form-control quantity">
+                    <button type="button" class="btn btn-danger removeProductBtn">Remove</button>
+                </div>
+            `;
+            const productNode = document.createRange().createContextualFragment(productTemplate);
+            productsContainer.appendChild(productNode);
+        });
+
+        productsContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('removeProductBtn')) {
+                event.target.parentNode.remove();
+            }
+        });
+    });
+</script>

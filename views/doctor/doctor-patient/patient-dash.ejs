@@ -1,0 +1,28 @@
+<%- include('../navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('../side') %>
+        </div>
+        <div class="col-10">
+            <div class="row mt-4">
+                <div class="col-6">
+                    <div class="card bg-info text-white">
+                        <div class="card-body ms-2">
+                            <h1 class="display-7"><i class="bi bi-heart-pulse"></i></h1>
+                           <a href="/doctor/view-patient" class="h5 text-light text-decoration-none">View Your Patients</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card bg-success text-white">
+                        <div class="card-body ms-2">
+                            <h1 class="display-7"><i class="bi bi-table"></i></h1>
+                            <a href="/doctor/discharge-patient" class="h5 text-light text-decoration-none">Your Discharged Patient</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

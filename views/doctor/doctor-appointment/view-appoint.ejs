@@ -1,0 +1,36 @@
+<%- include('../navbar') %>
+<div class="container-fluid ps-0">
+    <div class="row w-100 p-0">
+        <div class="col-2" id="side" style="height:91vh;">
+            <%- include('../side') %>
+        </div>
+        <div class="col-10">
+            <h4 class="mt-3 border-start border-4 px-2">Your Appointments</h4>
+            <table class="table mt-4">
+                <thead class="table-dark">
+                  <tr>
+                      <th>Patient Name</th>
+                      <th>Patient Picture</th>
+                      <th>Description</th>
+                      <th>Mobile</th>
+                      <th>Address</th>
+                      <th>Appointment Date</th>
+                  </tr>
+                </thead>
+                <tbody><% data.forEach(data => { %>
+                    <tr>
+                        <td><%-data.patientId.patientname %></td>
+                        <td>
+                          <img src="/<%-data.patientId.image %>" alt="" style="height: 60px;width: 60px;">
+                            </td>
+                        <td><%-data.description %></td>
+                        <td><%-data.patientId.contact %></td>
+                        <td><%-data.patientId.address%></td>
+                        <td><%-data.appointmentDate %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
